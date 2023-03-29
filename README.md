@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Getting started
 
 1. Clone this repository.
-2. Fill in your IMDB apikey inside `src/environment/Environment.ts`.
+2. Fill in your IMDB apikey inside `src/environment/environment.ts`.
 3. Use `npm install` to install all node dependencies.
 4. Start the [Development server](#development-server).
 
