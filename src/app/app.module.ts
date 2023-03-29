@@ -10,18 +10,18 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {HttpClientModule} from "@angular/common/http";
-import { MovielistComponent } from './components/movielist/movielist.component';
-import { SearchpageComponent } from './pages/searchpage/searchpage.component';
-import { FeaturedpageComponent } from './pages/featuredpage/featuredpage.component';
+import { MovieListComponent } from './components/movielist/movie-list.component';
+import { SearchPageComponent } from './pages/searchpage/search-page.component';
+import { FeaturedPageComponent } from './pages/featuredpage/featured-page.component';
 import {GetService} from "./service/get.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchbarComponent,
-    MovielistComponent,
-    SearchpageComponent,
-    FeaturedpageComponent,
+    MovieListComponent,
+    SearchPageComponent,
+    FeaturedPageComponent,
   ],
   imports: [
     BrowserModule,

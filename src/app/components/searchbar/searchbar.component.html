@@ -2,18 +2,18 @@
   <form [formGroup]="myForm">
     <mat-form-field>
       <input matInput placeholder="Type movie title here..." formControlName="search">
-      <mat-error *ngIf="getSearchResult.invalid">Please provide a movie title</mat-error>
+      <mat-error *ngIf="getSearchResult().invalid">Please provide a movie title</mat-error>
     </mat-form-field>
 
-  <button class="searchButton" mat-stroked-button [disabled]="getSearchResult.invalid"
-    (click)="FetchOMDBMovieOnTitle()">Search</button>
+  <button class="searchButton" mat-stroked-button [disabled]="getSearchResult().invalid"
+    (click)="fetchOMDBMovieOnTitle()">Search</button>
   </form>
 </div>
 
 <div *ngFor="let movie of movieList" class="movieListWrapper">
   <div class="movieList" [routerLink]="['/featuredPage', movie.imdbID]"  >
     <div class="movieWrapper">
-      <div class="pictureFrame" style="background-image: url('{{movie.Poster}}')"></div>
+      <div class="pictureFrame" [style.background-image]="'url(' + movie.Poster + ')'"></div>
         <ul class="list">
           <li>title: {{movie.Title}}</li>
           <li>type: {{movie.Type}}</li>

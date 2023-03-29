@@ -1,7 +1,7 @@
 <div class="mainBackground">
   <div class="bodyWrapper">
     <div class="movieWrapper" *ngIf="$selectedMovie | async; let sMovie">
-      <div class="poster" style="background-image: url({{sMovie.Poster}})"></div>
+      <div class="poster" [style.background-image]="'url(' + sMovie.Poster + ')'"></div>
       <div class="list">
         <ul>
           <li>Title: {{sMovie.Title}}</li>
@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="movieWrapper" *ngIf="$predefinedMovie | async; let pMovie">
-      <div class="poster" style="background-image: url({{pMovie.Poster}})"></div>
+      <div class="poster" [style.background-image]="'url(' + pMovie.Poster + ')'"></div>
       <div class="list">
         <ul>
           <li>Title: {{pMovie.Title}}</li>

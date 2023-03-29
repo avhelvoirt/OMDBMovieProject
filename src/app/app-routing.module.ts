@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {FeaturedpageComponent} from "./pages/featuredpage/featuredpage.component";
-import {SearchpageComponent} from "./pages/searchpage/searchpage.component";
+import {FeaturedPageComponent} from "./pages/featuredpage/featured-page.component";
+import {SearchPageComponent} from "./pages/searchpage/search-page.component";
 
 const routes: Routes = [
-  {path: '', component: SearchpageComponent},
-  {path:'featuredPage/:imdbID', component: FeaturedpageComponent, pathMatch:'full'}
+  {path: '', component: SearchPageComponent},
+  {path:'featuredPage/:imdbID', component: FeaturedPageComponent, pathMatch:'full'}
 ];
 
 @NgModule({

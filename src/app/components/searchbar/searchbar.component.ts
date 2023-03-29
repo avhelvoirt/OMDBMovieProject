@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
+import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Movie} from "../../model/movie";
-import{GetService} from '../../service/get.service'
+import {GetService} from '../../service/get.service'
 
 @Component({
   selector: 'app-searchbar',
@@ -10,30 +9,28 @@ import{GetService} from '../../service/get.service'
   styleUrls: ['./searchbar.component.scss']
 })
 export class SearchbarComponent implements OnInit {
-  myForm: FormGroup | any;
+  myForm!: FormGroup;
   movieList: Movie[] = [];
-  getService:GetService;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
-    this.getService = new GetService(http)
+  constructor(private fb: FormBuilder, private getService: GetService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.myForm = this.fb.group({
       search: ['', [
         Validators.required
       ]]
-    })
+    });
   }
 
-  get getSearchResult() {
-    return this.myForm.get('search')
+  getSearchResult(): AbstractControl {
+    return this.myForm.get('search')!;
   }
 
-  FetchOMDBMovieOnTitle(){
-    if (this.getSearchResult.value) {
+  fetchOMDBMovieOnTitle(): void {
+    if (this.getSearchResult().value) {
       this.movieList = [];
-      this.getService.fetchMoviesOnTitleInclPlot(this.getSearchResult.value, this.movieList)
+      this.getService.fetchMoviesOnTitleInclPlot(this.getSearchResult().value, this.movieList);
     }
   }
 }

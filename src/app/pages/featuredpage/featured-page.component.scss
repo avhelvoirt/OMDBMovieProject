@@ -11,10 +11,9 @@
 
 .movieWrapper{
   display: flex;
-}
-
-.movieWrapper:nth-child(1){
-  margin-right: 20px;
+  &:nth-child(1){
+    margin-right: 20px;
+  }
 }
 
 .poster {
@@ -37,12 +36,5 @@
   .plot{
     max-height: 170px;
     overflow: auto;
-  }
-
-  .plotButton{
-    color: red;
-  }
-  .plotButton:hover{
-    cursor: pointer;
   }
 }
